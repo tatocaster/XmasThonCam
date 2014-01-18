@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+	<title>Webcam</title>
+	<script type="text/javascript" src="static/js/jquery-2.0.3.min.js"></script>
+	<script type="text/javascript" src="static/js/script.js"></script>
+	<link rel="stylesheet" type="text/css" href="static/css/style.css">
+	<script type="text/javascript"></script>
+</head>
+<body>
+	<h1>Click To Choose Filter</h1>
+	<div id="countdown"></div>
+	<video id="video" autoplay>a</video>
+	<button id="snap" onclick='snap()' hidden="hidden">Snap Photo</button>
+	<button id="download" hidden="hidden">Download</button>
+
+	<style type="text/css">
+	  .fingertip { position:absolute; z-index:3000; border-radius:12px;
+	      width:20px; height:20px;
+	  }
+	  .fingertip.off { background-color:green; }
+	  .fingertip.touchzone { background-color:yellow; }
+	  .fingertip.on { background-color:red; }
+	</style>
+	<div id="canvas-container" style="position:relative;">
+	  <canvas id="canvas" width="640" height="480" class="border" hidden="hidden"></canvas></div>
+	<div id="success"></div>
+	<br>
+	<div>
+	  მწვანე ბურთები აღნიშნავს თითის წვერებს.<br>
+	  ყვითელი ბურთები აღნიშნავს, რომ თითი უახლოვდება სახატავ ზონას.<br>
+	  წითელი ბურთები აღნიშნავს, რომ თითის მოძრაობა დახატავს.<br>
+	</div>
+
+<script type="text/javascript">
+var idx = 0;
+var filters = ['blur', 'invert','grayscale','brightness','sepia','video'];
+
+function changeFilter(e) {
+  var el = e.target;
+  el.className = '';
+  var effect = filters[idx++ % filters.length]; // loop through filters.
+  if (effect) {
+    el.classList.add(effect);
+    el.value=effect;
+    console.log (el.value);
+  }
+}
+document.querySelector('video').addEventListener(
+    'click', changeFilter);
+</script>
+
+<script type="text/javascript" src="leap.min.js"></script>
+<script type="text/javascript" src="zleap.js"></script>
+<script type="text/javascript" src="main.js"></script>
+
+</body>
+</html>

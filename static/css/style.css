@@ -1,0 +1,51 @@
+.border {
+	border: 2px solid red;
+}
+
+video {
+  	width: 640px;
+  	height: 480px;
+}
+.blur {-webkit-filter: blur(2px);}
+.invert {-webkit-filter: invert(100%);}
+.saturate {-webkit-filter: saturate(3);}
+.grayscale {-webkit-filter: grayscale(100%);}
+.contrast {-webkit-filter: contrast(160%);}
+.brightness {-webkit-filter: brightness(1.5);}
+.sepia {-webkit-filter: sepia(100%);}
+.huerotate {-webkit-filter: hue-rotate(180deg);}
+.rss.opacity {-webkit-filter: opacity(50%);}
+
+
+#countdown {
+
+	font-size: 40px;
+	color : red;
+	animation-name: blinker;
+	    animation-duration: 0.9s;
+	    animation-timing-function: linear;
+	    animation-iteration-count: infinite;
+
+	    -webkit-animation-name: blinker;
+	    -webkit-animation-duration: 0.9s;
+	    -webkit-animation-timing-function: linear;
+	    -webkit-animation-iteration-count: infinite;
+	}
+
+	@-moz-keyframes blinker {  
+	    0% { opacity: 1.0; }
+	    50% { opacity: 0.0; }
+	    100% { opacity: 1.0; }
+	}
+
+	@-webkit-keyframes blinker {  
+	    0% { opacity: 1.0; }
+	    50% { opacity: 0.0; }
+	    100% { opacity: 1.0; }
+	}
+
+	@keyframes blinker {  
+	    0% { opacity: 1.0; }
+	    50% { opacity: 0.0; }
+	    100% { opacity: 1.0; }
+	}
